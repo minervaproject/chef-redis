@@ -9,3 +9,9 @@ apt_repository node["redis"]["apt_repository"] do
   keyserver node["redis"]["apt_keyserver"]
   key node["redis"]["apt_key"]
 end
+
+execute 'apt-get update' do
+  command 'apt-get update'
+  ignore_failure true
+  action :nothing
+end
